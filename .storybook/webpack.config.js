@@ -1,18 +1,6 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
 
 module.exports = {
-    context: path.resolve(__dirname, '..'),
-    entry: './example',
-    devtool: 'source-map',
-    resolve: {
-        // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: ['.ts', '.tsx', '.js', '.jsx']
-    },
-    devServer: {
-        hot: true,
-        inline: true
-    },
     module: {
         rules: [
             {
@@ -31,10 +19,5 @@ module.exports = {
                 loader: 'source-map-loader'
             }
         ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../example/index.html')
-        })
-    ]
+    }
 };

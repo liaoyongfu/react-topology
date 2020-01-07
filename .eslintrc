@@ -1,3 +1,8 @@
 {
-    "extends": ["liaoyf/react-typescript"]
+    "extends": ["liaoyf/react-typescript"],
+    "rules": {
+        "import/no-extraneous-dependencies": ["error", {
+            "devDependencies": ["config/**/*", "stories/**/*"]
+        }]
+    }
 }
