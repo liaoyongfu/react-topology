@@ -1,7 +1,27 @@
 import React from 'react';
 
-const Item = () => {
-    return <div>Hello World</div>;
+export interface Data {
+    label: string;
+    children?: Data[];
+}
+
+export interface ItemProps {
+    // 自定义渲染函数
+    render?: (data: object) => React.ReactElement;
+    // 数据模型
+    data: Data;
+}
+
+const Item: React.FC<ItemProps> = ({ render, data }: ItemProps) => {
+    const { label } = data;
+    if (render) {
+        return render(data);
+    }
+    return (
+        <div>
+            <div>{label}</div>
+        </div>
+    );
 };
 
 export default Item;
