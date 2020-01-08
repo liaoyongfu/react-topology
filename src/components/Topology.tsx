@@ -5,7 +5,7 @@ export interface TopologyProps {
     data: Data[];
 }
 
-const Topology: React.FC<TopologyProps> = ({ data }: TopologyProps) => {
+const Topology = ({ data }: TopologyProps) => {
     const render = (node: Data[]) => {
         return node.map(item => {
             return (

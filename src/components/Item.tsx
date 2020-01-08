@@ -12,7 +12,7 @@ export interface ItemProps {
     data: Data;
 }
 
-const Item: React.FC<ItemProps> = ({ render, data }: ItemProps) => {
+const Item = ({ render, data }: ItemProps) => {
     const { label } = data;
     if (render) {
         return render(data);

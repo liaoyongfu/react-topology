@@ -9,7 +9,7 @@
     "email": "893753543@qq.com"
   },
   "scripts": {
-    "start": "webpack-dev-server --config=config/webpack.dev.js",
+    "build": "webpack --config=config/webpack.prod.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -35,7 +35,6 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
     "fork-ts-checker-webpack-plugin": "^3.1.1",
-    "html-webpack-plugin": "^3.2.0",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-docgen-typescript-loader": "^3.6.0",
@@ -46,7 +45,8 @@
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {},
   "peerDependencies": {
