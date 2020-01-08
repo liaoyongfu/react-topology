@@ -2,6 +2,9 @@ const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const merge = require('webpack-merge');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { rules } = require('./webpack.common');
 
 const options = (minify = true) => {
     return {
@@ -25,46 +28,16 @@ const options = (minify = true) => {
             minimize: minify
         },
         module: {
-            rules: [
-                {
-                    test: /\.ts(x?)$/,
-                    exclude: /node_modules/,
-                    use: [
-                        {
-                            loader: 'ts-loader'
-                        }
-                    ]
-                },
-                // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-                {
-                    enforce: 'pre',
-                    test: /\.js$/,
-                    loader: 'source-map-loader'
-                },
-                {
-                    test: /\.(png|svg|jpg|gif)$/,
-                    use: ['file-loader']
-                },
-                {
-                    test: /\.(woff|woff2|eot|ttf|otf)$/,
-                    use: ['file-loader']
-                },
-                {
-                    test: /\.less$/,
-                    use: [
-                        {
-                            loader: 'style-loader' // creates style nodes from JS strings
-                        },
-                        {
-                            loader: 'css-loader' // translates CSS into CommonJS
-                        },
-                        {
-                            loader: 'less-loader' // compiles Less to CSS
-                        }
-                    ]
-                }
-            ]
-        }
+            rules
+        },
+        plugins: [
+            new MiniCssExtractPlugin({
+                filename: 'Topology.css'
+            }),
+            new BundleAnalyzerPlugin({
+                analyzerPort: 'auto'
+            })
+        ]
     };
 };
 

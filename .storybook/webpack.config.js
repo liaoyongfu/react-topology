@@ -1,23 +1,7 @@
-const path = require("path");
+const { rules }  = require('../config/webpack.common');
 
 module.exports = {
     module: {
-        rules: [
-            {
-                test: /\.ts(x?)$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'ts-loader'
-                    }
-                ]
-            },
-            // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-            {
-                enforce: 'pre',
-                test: /\.js$/,
-                loader: 'source-map-loader'
-            }
-        ]
+        rules
     }
 };
