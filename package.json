@@ -25,6 +25,8 @@
     "@typescript-eslint/eslint-plugin": "^2.15.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.4.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-typescript": "^6.3.1",
     "eslint-config-liaoyf": "^1.2.0",
@@ -40,6 +42,7 @@
     "react-docgen-typescript-loader": "^3.6.0",
     "react-dom": "^16.12.0",
     "source-map-loader": "^0.2.4",
+    "style-loader": "^1.1.2",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.4",
     "webpack": "^4.41.5",
@@ -48,7 +51,10 @@
     "webpack-merge": "^4.2.2",
     "webpack-node-externals": "^1.7.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "file-loader": "^5.0.2",
+    "less-loader": "^5.0.0"
+  },
   "peerDependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
