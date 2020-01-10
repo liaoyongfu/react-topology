@@ -27,15 +27,15 @@ const rules = [
     {
         test: /\.less$/,
         use: [
+            // 把less编译到css文件里
             {
-                loader: MiniCssExtractPlugin.loader
+                loader: MiniCssExtractPlugin.loader,
+                options: {
+                    publicPath: '../'
+                }
             },
-            {
-                loader: 'css-loader' // translates CSS into CommonJS
-            },
-            {
-                loader: 'less-loader' // compiles Less to CSS
-            }
+            'css-loader', // 注意顺序
+            'less-loader'
         ]
     }
 ];
