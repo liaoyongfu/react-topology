@@ -55,6 +55,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "file-loader": "^5.0.2",
     "less-loader": "^5.0.0"
   },

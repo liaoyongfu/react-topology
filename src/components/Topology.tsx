@@ -12,7 +12,7 @@ const Topology = ({ data }: TopologyProps) => {
             return (
                 <div className="topology-level">
                     <Item data={item} />
-                    {item.children && item.children && render(item.children)}
+                    {item.children && item.children && <div className="topology-children">{render(item.children)}</div>}
                 </div>
             );
         });

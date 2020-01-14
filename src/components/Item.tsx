@@ -5,23 +5,29 @@ export interface Data {
     children?: Data[];
 }
 
-export interface ItemProps {
+const defaultProps = {
+    data: []
+};
+type ItemProps = {
     // 自定义渲染函数
     render?: (data: object) => React.ReactElement;
     // 数据模型
     data: Data;
-}
+    className?: string;
+} & typeof defaultProps;
 
-const Item = ({ render, data }: ItemProps) => {
+const Item = ({ render, data, className }: ItemProps) => {
     const { label } = data;
     if (render) {
         return render(data);
     }
     return (
-        <div>
+        <div className={className}>
             <div>{label}</div>
         </div>
     );
 };
+
+Item.defaultProps = defaultProps;
 
 export default Item;
