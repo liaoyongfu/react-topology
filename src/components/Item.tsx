@@ -6,7 +6,7 @@ export interface Data {
 }
 
 const defaultProps = {
-    data: []
+    data: {}
 };
 type ItemProps = {
     // 自定义渲染函数
